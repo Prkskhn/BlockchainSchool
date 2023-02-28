@@ -1,3 +1,24 @@
 {
-    "name": "wetube"
+  "name": "wetube",
+  "version": "1.0.0",
+  "description": "watch videos",
+  "scripts": {
+    "dev": "nodemon --exec babel-node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Prkskhn/wetube.git"
+  },
+  "keywords": [],
+  "author": "sukhun<psh7452@naver.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
+    "nodemon": "^2.0.20"
+  }
 }
