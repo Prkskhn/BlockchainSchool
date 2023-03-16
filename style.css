@@ -1,28 +1,66 @@
-img{
-    width: 108px;
+body {
+  margin: 0;
 }
 
-button{
-    background-color: white;
-    border: none;
-    color: #222222;
+header {
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 1280px;
+  margin: auto;
+}
+
+img {
+  width: 108px;
+}
+
+button {
+  background-color: white;
+  border: none;
+  color: #222222;
+  font-size: 16px;
+  font-weight: 600;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: none;
+}
+
+.logIn {
+  color: #222222;
+  display: inline-block;
+  border: 1px solid #c7c7c7;
+  border-radius: 9999px;
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.firstButton {
+  margin-left: 50px;
+}
+
+.logInBox {
+  display: flex;
+  align-items: center;
+}
+
+.ellipsis {
+  width: 24px;
+  margin-left: 16px;
+}
+
+@media (min-width: 1024px) {
+  button {
+    display: inline-block;
+  }
+  .ellipsis {
+    display: none;
+  }
+  .logIn {
+    color: #c7c7c7;
     font-size: 16px;
-    font-weight: 600;
-    padding-left: 16px;
-    padding-right: 16px;
-}
-
-.logIn{
-    color: #737373;
-    float: right;
-}
-
-header{
-    padding: 24px;
-    margin-left: 144px;
-    margin-right: 144px;
-}
-
-.firstButton{
-    margin-left: 80px;
+    border: none;
+    padding: 0;
+  }
 }
