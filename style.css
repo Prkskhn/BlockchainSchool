@@ -2,7 +2,16 @@
   width: 30px;
 }
 .buttonLogo {
-  width: 15px;
+  width: 10px;
+}
+
+.playNow {
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.buttonLogoDiv {
+  display: flex;
+  align-items: center;
 }
 
 .box1 {
@@ -31,7 +40,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: pink;
+  background-color: transparent;
   padding: 10px;
 }
 
@@ -43,10 +52,12 @@
   padding: 8px;
   font-weight: 600;
   color: red;
+  margin-left: 10px;
 }
-
-.button3 {
+#button3 {
+  white-space: nowrap;
   display: flex;
+  justify-content: center;
   align-items: center;
   background-color: red;
   color: white;
@@ -54,17 +65,39 @@
   border-radius: 6px;
   padding: 8px;
   font-weight: 600;
+  font-style: normal;
+}
+
+.hiddenDiv {
+  display: flex;
+  justify-content: end;
 }
 
 .earth {
-  width: 10px;
+  width: 25px;
 }
 
 .hiddenButton {
   border: none;
   background-color: transparent;
   color: #969696;
-  padding: 10px;
+  margin: 0px 5px;
+}
+
+#kkk {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  padding: 6px;
+}
+
+.earthDiv {
+  display: flex;
+}
+
+.ko {
+  font-size: 13px;
+  padding-left: 3px;
 }
 
 .hiddenDiv {
@@ -72,8 +105,23 @@
   display: none;
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 800px) {
+  .ellipsis {
+    display: none;
+  }
+
   .hiddenDiv {
-    display: inline-block;
+    display: flex;
+  }
+
+  .box2 {
+    width: min-content;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+
+  #button3 {
+    white-space: nowrap;
   }
 }
