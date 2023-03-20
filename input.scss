@@ -1,70 +1,69 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
-footer, .sitemap, .introduce, .contents, header {
-  max-width: 1280px;
-  margin: auto;
-}
-
-button {
-  border: 0;
-  background-color: transparent;
-}
+@import "theme.scss";
 
 body {
   margin: 0;
-  color: #222222;
+  color: $primary;
   font-family: "Pretendard";
 }
 
 header {
+  @extend %maxWidth;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 24px;
-}
-header .menu .logo {
-  width: 108px;
-}
-header .menu button {
-  font-size: 16px;
-  font-weight: 600;
-  display: none;
-  padding-left: 16px;
-  padding-right: 16px;
-}
-header .menu button:nth-child(2) {
-  margin-left: 44px;
-}
-@media (min-width: 1280px) {
-  header .menu button {
-    display: inline-block;
+
+  .menu {
+    .logo {
+      width: 108px;
+    }
+
+    button {
+      font-size: 16px;
+      font-weight: 600;
+      display: none;
+      padding-left: 16px;
+      padding-right: 16px;
+
+      &:nth-child(2) {
+        margin-left: 44px;
+      }
+
+      @include responsive("pc") {
+        display: inline-block;
+      }
+    }
   }
-}
-header .loginBox {
-  display: flex;
-  align-items: center;
-}
-header .loginBox .login {
-  display: inline-block;
-  border: 1px solid rgb(232, 232, 232);
-  border-radius: 9999px;
-  padding: 8px 16px;
-  font-size: 14px;
-}
-@media (min-width: 1280px) {
-  header .loginBox .login {
-    color: #737373;
-    font-size: 16px;
-    border: 0px;
-    padding: 0px;
-  }
-}
-header .loginBox .ellipsis {
-  width: 24px;
-  margin-left: 16px;
-}
-@media (min-width: 1280px) {
-  header .loginBox .ellipsis {
-    display: none;
+
+  .loginBox {
+    display: flex;
+    align-items: center;
+
+    .login {
+      display: inline-block;
+      border: 1px solid rgb(232, 232, 232);
+      border-radius: 9999px;
+      padding: 8px 16px;
+      font-size: 14px;
+
+      @include responsive("pc") {
+        color: $secondary;
+        font-size: 16px;
+        border: 0px;
+        padding: 0px;
+      }
+    }
+
+    .ellipsis {
+      width: 24px;
+      margin-left: 16px;
+
+      @include responsive("pc") {
+        display: none;
+      }
+    }
   }
 }
 
@@ -93,11 +92,12 @@ header .loginBox .ellipsis {
 }
 
 .contents {
+  @extend %maxWidth;
   margin-top: 72px;
 }
 
 .contentsTitle {
-  color: #e67800;
+  color: $techitOrange;
   font-weight: 600;
 }
 
@@ -114,7 +114,7 @@ header .loginBox .ellipsis {
 }
 
 .contentsDetail div:nth-child(1) {
-  color: #737373;
+  color: $secondary;
 }
 
 .contentsGrid {
@@ -130,16 +130,19 @@ header .loginBox .ellipsis {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media (min-width: 1024px) {
   .contentsGrid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
 @media (min-width: 1280px) {
   .contentsGrid {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
 .contentsCard {
   width: 290px;
 }
@@ -162,35 +165,35 @@ header .loginBox .ellipsis {
 
 .contentsCardComplete {
   display: inline;
-  border: 1px solid #059669;
+  border: 1px solid $complete;
   text-align: center;
   padding: 6px 8px;
   border-radius: 4px;
   font-size: 14px;
   font-weight: 600;
-  color: #059669;
+  color: $complete;
 }
 
 .contentsCardIng {
   display: inline;
-  border: 1px solid #1d4ed8;
+  border: 1px solid $ing;
   text-align: center;
   padding: 6px 8px;
   border-radius: 4px;
   font-size: 14px;
   font-weight: 600;
-  color: #1d4ed8;
+  color: $ing;
 }
 
 .contentsCardEnd {
   display: inline;
-  border: 1px solid #3f3f46;
+  border: 1px solid $end;
   text-align: center;
   padding: 6px 8px;
   border-radius: 4px;
   font-size: 14px;
   font-weight: 600;
-  color: #3f3f46;
+  color: $end;
 }
 
 .contentsCardTitle {
@@ -243,16 +246,17 @@ header .loginBox .ellipsis {
 
 .alarmDetail {
   font-size: 14px;
-  color: #737373;
+  color: $secondary;
   font-weight: 600;
 }
 
 .introduce {
+  @extend %maxWidth;
   margin-top: 72px;
 }
 
 .introduceTitle {
-  color: #e67800;
+  color: $techitOrange;
   font-weight: 600;
 }
 
@@ -264,7 +268,7 @@ header .loginBox .ellipsis {
 
 .introduceDetail {
   margin-top: 16px;
-  color: #737373;
+  color: $secondary;
 }
 
 .introduceGrid {
@@ -280,6 +284,7 @@ header .loginBox .ellipsis {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 .introduceCard {
   position: relative;
 }
@@ -309,18 +314,20 @@ header .loginBox .ellipsis {
 
 .introduceCardDetail {
   font-size: 14px;
-  color: #737373;
+  color: $secondary;
   font-weight: 600;
 }
 
 .sitemap {
+  @extend %maxWidth;
+
   display: flex;
   justify-content: space-between;
   padding-top: 32px;
-  border-top: 1px solid #d4d4d4;
+  border-top: 1px solid $border;
   margin-top: 120px;
   padding-bottom: 32px;
-  border-bottom: 1px solid #d4d4d4;
+  border-bottom: 1px solid $border;
 }
 
 .sitemapLogo {
@@ -338,7 +345,7 @@ header .loginBox .ellipsis {
 .sitemapTitle {
   font-size: 12px;
   font-weight: 600;
-  color: #737373;
+  color: $secondary;
   margin-bottom: 20px;
 }
 
@@ -349,8 +356,10 @@ header .loginBox .ellipsis {
 }
 
 footer {
+  @extend %maxWidth;
+
   font-size: 12px;
-  color: #737373;
+  color: $secondary;
   padding-bottom: 24px;
 }
 
@@ -378,5 +387,3 @@ footer {
   margin-top: 12px;
   margin-bottom: 4px;
 }
-
-/*# sourceMappingURL=style.css.map */
