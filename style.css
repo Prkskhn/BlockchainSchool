@@ -1,5 +1,20 @@
-h1 {
-  color: aqua;
+div h1 {
+  background-color: #235342;
+}
+div h2 {
+  background-color: rgb(165, 56, 74);
+}
+div h3 {
+  background-color: rgb(89, 56, 165);
+}
+div h4 {
+  background-color: rgb(166, 241, 195);
+}
+div h5 {
+  background-color: rgb(205, 230, 137);
+}
+div a h6 {
+  background-color: rgb(255, 167, 126);
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,3 +1,27 @@
-h1 {
-  color: aqua;
+@import "color";
+
+div {
+  h1 {
+    background-color: $offBlack;
+  }
+
+  h2 {
+    background-color: $rose;
+  }
+
+  h3 {
+    background-color: $pup;
+  }
+  h4 {
+    background-color: $grellow;
+  }
+  h5 {
+    background-color: $lemon;
+  }
+
+  a {
+    h6 {
+      background-color: $salmon;
+    }
+  }
 }
