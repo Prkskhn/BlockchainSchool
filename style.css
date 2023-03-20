@@ -1,20 +1,25 @@
-div h1 {
-  background-color: #235342;
+.info {
+  background-color: darkgray;
+  color: whitesmoke;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px;
 }
-div h2 {
-  background-color: rgb(165, 56, 74);
+
+.alert {
+  background-color: darkred;
+  color: whitesmoke;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px;
 }
-div h3 {
-  background-color: rgb(89, 56, 165);
-}
-div h4 {
-  background-color: rgb(166, 241, 195);
-}
-div h5 {
-  background-color: rgb(205, 230, 137);
-}
-div a h6 {
-  background-color: rgb(255, 167, 126);
+
+.success {
+  background-color: darkgreen;
+  color: whitesmoke;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px;
 }
 
 /*# sourceMappingURL=style.css.map */
