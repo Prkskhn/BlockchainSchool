@@ -1,0 +1,35 @@
+@media (min-width: 1024px) {
+  .menu button {
+    display: inline-block;
+  }
+
+  .login {
+    color: #737373;
+    font-size: 16px;
+    border: 0px;
+    padding: 0px;
+  }
+
+  .ellipsis {
+    display: none;
+  }
+}
+
+@mixin screenWidth {
+  @media (min-width: 1024px) {
+    .menu button {
+      display: inline-block;
+    }
+
+    .login {
+      color: #737373;
+      font-size: 16px;
+      border: 0px;
+      padding: 0px;
+    }
+
+    .ellipsis {
+      display: none;
+    }
+  }
+}
