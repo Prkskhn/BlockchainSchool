@@ -23,3 +23,13 @@ main {
   justify-content: center;
   align-items: center;
 }
+
+.time {
+  font-size: 30px;
+  border: 1px solid rgb(34, 34, 34);
+  border-radius: 5px;
+
+  padding: 5px 20px;
+  animation: bounce;
+  animation-duration: 2s;
+}

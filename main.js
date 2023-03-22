@@ -3,23 +3,23 @@ function getTime() {
 
   const newDate = new Date();
 
-  let hours = newDate.getHours();
+  const hours = String(newDate.getHours()).padStart(2, "0");
 
-  let minutes = newDate.getMinutes();
+  const minutes = String(newDate.getMinutes()).padStart(2, "0");
 
-  let seconds = newDate.getSeconds();
+  const seconds = String(newDate.getSeconds()).padStart(2, "0");
 
-  if (minutes.toString().length === 1) {
-    minutes = "0" + minutes;
-  }
+  //   if (minutes.toString().length === 1) {
+  //     minutes = "0" + minutes;
+  //   }
 
-  if (hours.toString().length === 1) {
-    hours = "0" + hours;
-  }
+  //   if (hours.toString().length === 1) {
+  //     hours = "0" + hours;
+  //   }
 
-  if (seconds.toString().length === 1) {
-    seconds = "0" + seconds;
-  }
+  //   if (seconds.toString().length === 1) {
+  //     seconds = "0" + seconds;
+  //   }
 
   //   time.innerText = hours + ":" + minutes + ":" + seconds;
   time.innerText = `${hours}:${minutes}:${seconds}`;
