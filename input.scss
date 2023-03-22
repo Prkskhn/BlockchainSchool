@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
+
 body {
   margin: 0;
   color: black;
@@ -24,12 +26,25 @@ main {
   align-items: center;
 }
 
-.time {
-  font-size: 30px;
-  border: 1px solid rgb(34, 34, 34);
+.time1 {
+  font-family: ebgaramond;
+  font-size: 130px;
+  border: 0px;
   border-radius: 5px;
+  color: rgba($color: #00ffdd, $alpha: 0.2);
 
-  padding: 5px 20px;
-  animation: bounce;
-  animation-duration: 2s;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.8);
+}
+
+.time2 {
+  font-family: ebgaramond;
+  font-size: 130px;
+  border: 0px;
+  border-radius: 5px;
+  color: rgba($color: #00ffdd, $alpha: 0.2);
+
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.3);
+  position: relative;
+  transform: rotate(180deg) scaleX(-1);
+  margin-top: -60px;
 }
