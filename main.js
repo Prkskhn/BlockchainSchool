@@ -1,13 +1,29 @@
-const time = document.querySelector(".time");
+function getTime() {
+  const time = document.querySelector(".time");
 
-const newDate = new Date();
+  const newDate = new Date();
 
-const hours = newDate.getHours();
+  let hours = newDate.getHours();
 
-const minutes = newDate.getMinutes();
+  let minutes = newDate.getMinutes();
 
-const seconds = newDate.getSeconds();
+  let seconds = newDate.getSeconds();
 
-time.innerText = hours + ":" + minutes + ":" + seconds;
+  if (minutes.toString().length === 1) {
+    minutes = "0" + minutes;
+  }
 
-console.log(time);
+  if (hours.toString().length === 1) {
+    hours = "0" + hours;
+  }
+
+  if (seconds.toString().length === 1) {
+    seconds = "0" + seconds;
+  }
+
+  //   time.innerText = hours + ":" + minutes + ":" + seconds;
+  time.innerText = `${hours}:${minutes}:${seconds}`;
+}
+
+getTime();
+setInterval(getTime, 1000);
