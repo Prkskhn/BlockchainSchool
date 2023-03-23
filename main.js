@@ -89,6 +89,21 @@ function onClickAdd() {
 }
 
 function onClickRegist() {
+  const quotesMsg = document.querySelector(".quotesMsg");
+  const newQuotes = document.querySelector(".newQuotes");
   const newQuotesInput = document.querySelector(".newQuotesInput");
-  console.log(newQuotesInput.value);
+
+  if (!newQuotesInput.value) {
+    return;
+  }
+
+  let savedQuotes = localStorage.getItem(QUOTES);
+
+  let quotesArray = JSON.parse(savedQuotes);
+  quotesArray.push(newQuotesInput.value);
+
+  localStorage.setItem(QUOTES, JSON.stringify(quotesArray));
+
+  quotesMsg.innerHTML = `<span style="color:red;">${newQuotesInput.value}</span>`;
+  newQuotes.style.display = "none";
 }
