@@ -17,34 +17,46 @@ body {
 main {
   position: fixed;
   z-index: 2;
-
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+  .time1 {
+    font-family: ebgaramond;
+    font-size: 130px;
+    border: 0px;
+    border-radius: 5px;
+    color: rgba($color: #00ffdd, $alpha: 0.2);
 
-.time1 {
-  font-family: ebgaramond;
-  font-size: 130px;
-  border: 0px;
-  border-radius: 5px;
-  color: rgba($color: #00ffdd, $alpha: 0.2);
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.8);
+  }
 
-  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.8);
-}
+  .time2 {
+    font-family: ebgaramond;
+    font-size: 130px;
+    border: 0px;
+    border-radius: 5px;
+    color: rgba($color: #00ffdd, $alpha: 0.2);
 
-.time2 {
-  font-family: ebgaramond;
-  font-size: 130px;
-  border: 0px;
-  border-radius: 5px;
-  color: rgba($color: #00ffdd, $alpha: 0.2);
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.3);
+    position: relative;
+    transform: rotate(180deg) scaleX(-1);
+    margin-top: -60px;
+  }
 
-  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.3);
-  position: relative;
-  transform: rotate(180deg) scaleX(-1);
-  margin-top: -60px;
+  .quotes {
+    position: relative;
+    .quotesAddBtn {
+      display: none;
+      position: absolute;
+      top: 20px;
+    }
+    &:hover {
+      .quotesAddBtn {
+        display: inline-block;
+      }
+    }
+  }
 }

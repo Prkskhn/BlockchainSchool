@@ -23,8 +23,7 @@ main {
   justify-content: center;
   align-items: center;
 }
-
-.time1 {
+main .time1 {
   font-family: ebgaramond;
   font-size: 130px;
   border: 0px;
@@ -32,8 +31,7 @@ main {
   color: rgba(0, 255, 221, 0.2);
   -webkit-text-stroke: 2px rgba(255, 255, 255, 0.8);
 }
-
-.time2 {
+main .time2 {
   font-family: ebgaramond;
   font-size: 130px;
   border: 0px;
@@ -43,6 +41,17 @@ main {
   position: relative;
   transform: rotate(180deg) scaleX(-1);
   margin-top: -60px;
+}
+main .quotes {
+  position: relative;
+}
+main .quotes .quotesAddBtn {
+  display: none;
+  position: absolute;
+  top: 20px;
+}
+main .quotes:hover .quotesAddBtn {
+  display: inline-block;
 }
 
 /*# sourceMappingURL=style.css.map */
