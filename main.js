@@ -106,4 +106,5 @@ function onClickRegist() {
 
   quotesMsg.innerHTML = `<span style="color:red;">${newQuotesInput.value}</span>`;
   newQuotes.style.display = "none";
+  newQuotesInput.value = "";
 }
