@@ -48,10 +48,13 @@ main {
 
   .quotes {
     position: relative;
+    font-size: 50px;
     .quotesAddBtn {
       display: none;
       position: absolute;
-      top: 20px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
     &:hover {
       .quotesAddBtn {

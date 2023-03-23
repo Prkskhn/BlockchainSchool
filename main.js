@@ -1,3 +1,5 @@
+const QUOTES = "quotes";
+
 function getTime1() {
   const time1 = document.querySelector(".time1");
 
@@ -55,3 +57,27 @@ getTime1();
 setInterval(getTime1, 1000);
 getTime2();
 setInterval(getTime2, 1000);
+
+function getQuotes() {
+  const quotesMsg = document.querySelector(".quotesMsg");
+  let savedQuotes = localStorage.getItem(QUOTES);
+
+  if (!savedQuotes) {
+    localStorage.setItem(
+      QUOTES,
+      JSON.stringify([
+        "열심히 살아봅시다1",
+        "열심히 살아봅시다22",
+        "열심히 살아봅시다333",
+      ])
+    );
+
+    savedQuotes = localStorage.getItem(QUOTES);
+  }
+
+  let quotesArray = JSON.parse(savedQuotes);
+
+  quotesMsg.innerText = quotesArray[0];
+}
+
+getQuotes();

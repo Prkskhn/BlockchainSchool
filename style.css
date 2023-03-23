@@ -44,11 +44,14 @@ main .time2 {
 }
 main .quotes {
   position: relative;
+  font-size: 50px;
 }
 main .quotes .quotesAddBtn {
   display: none;
   position: absolute;
-  top: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 main .quotes:hover .quotesAddBtn {
   display: inline-block;
