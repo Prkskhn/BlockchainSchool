@@ -82,3 +82,13 @@ function getQuotes() {
 }
 
 getQuotes();
+
+function onClickAdd() {
+  const newQuotes = document.querySelector(".newQuotes");
+  newQuotes.style.display = "inline-block";
+}
+
+function onClickRegist() {
+  const newQuotesInput = document.querySelector(".newQuotesInput");
+  console.log(newQuotesInput.value);
+}

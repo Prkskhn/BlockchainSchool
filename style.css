@@ -56,5 +56,8 @@ main .quotes .quotesAddBtn {
 main .quotes:hover .quotesAddBtn {
   display: inline-block;
 }
+main .newQuotes {
+  display: none;
+}
 
 /*# sourceMappingURL=style.css.map */
