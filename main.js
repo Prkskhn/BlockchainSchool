@@ -1,3 +1,5 @@
+let QUOTES = ["명언1", "명언2", "명언3"];
+
 function timeChecker() {
   let time = document.querySelector(".time");
 
@@ -25,3 +27,25 @@ function displayRegInput() {
   const quotesReg = document.querySelector(".quotesReg");
   quotesReg.style.display = "inline-block";
 }
+
+let quote = document.querySelector(".quotes");
+let savedQuotes = localStorage.getItem("quotes");
+if (!savedQuotes) {
+  localStorage.setItem("quotes", JSON.stringify(QUOTES));
+
+  savedQuotes = localStorage.getItem("quotes");
+}
+
+let getSavedQuotes = JSON.parse(savedQuotes);
+
+let randomGetSavedQuotes =
+  getSavedQuotes[Math.floor(Math.random() * getSavedQuotes.length)];
+
+quote.innerText = randomGetSavedQuotes;
+
+// quote.innerText(QUOTES[Math.floor([Math.random() * QUOTES.length])]);
+
+// let randomQuote = QUOTES[Math.floor([Math.random() * QUOTES.length])];
+// quote.innerText(randomQuote);
+
+// console.log(QUOTES[Math.floor([Math.random() * QUOTES.length])]);
