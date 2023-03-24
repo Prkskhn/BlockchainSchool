@@ -20,3 +20,8 @@ function timeChecker() {
 }
 timeChecker();
 setInterval(timeChecker, 1000);
+
+function displayRegInput() {
+  const quotesReg = document.querySelector(".quotesReg");
+  quotesReg.style.display = "inline-block";
+}
