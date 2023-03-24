@@ -27,3 +27,19 @@ function displayRegInput() {
   const quotesReg = document.querySelector(".quotesReg");
   quotesReg.style.display = "inline-block";
 }
+
+function randomQuotes() {
+  let quote = document.querySelector(".quotes");
+  let getQuotesFromLocalStorage = localStorage.getItem("quotes");
+  if (!getQuotesFromLocalStorage) {
+    localStorage.setItem("quotes", JSON.stringify(QUOTES));
+    getQuotesFromLocalStorage = localStorage.getItem("quotes");
+  }
+
+  let displayQuote = JSON.parse(getQuotesFromLocalStorage);
+
+  quote.innerText = displayQuote[Math.floor(Math.random() * QUOTES.length)];
+}
+
+randomQuotes();
+// quote.innerText = QUOTES[];
