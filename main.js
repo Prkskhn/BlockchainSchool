@@ -38,8 +38,33 @@ function randomQuotes() {
 
   let displayQuote = JSON.parse(getQuotesFromLocalStorage);
 
-  quote.innerText = displayQuote[Math.floor(Math.random() * QUOTES.length)];
+  quote.innerText =
+    displayQuote[Math.floor(Math.random() * displayQuote.length)];
 }
 
 randomQuotes();
-// quote.innerText = QUOTES[];
+// function regButton() {
+//   let quotesRegBox = document.querySelector(".quotesReg");
+//   quotesRegBox.style.display = "none";
+// }
+
+function newRegist() {
+  let quotesMsg = document.querySelector(".quotes");
+
+  let regBox = document.querySelector(".quotesReg");
+
+  let newInputText = document.querySelector(".quotesRegText");
+
+  if (!newInputText.value) {
+    return;
+  }
+
+  let savedQuotes = localStorage.getItem("quotes");
+  let getSavedQuotes = JSON.parse(savedQuotes);
+
+  getSavedQuotes.push(newInputText.value);
+
+  localStorage.setItem("quotes", JSON.stringify(getSavedQuotes));
+  quotesMsg.innerHTML = `<span style="color:red;">${newInputText.value}</span>`;
+  regBox.style.display = "none";
+}
