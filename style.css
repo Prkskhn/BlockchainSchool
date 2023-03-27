@@ -73,5 +73,8 @@ main .search .searchLogo {
   height: 30px;
   animation: spin 1s linear infinite;
 }
+main .searchResult {
+  display: none;
+}
 
 /*# sourceMappingURL=style.css.map */

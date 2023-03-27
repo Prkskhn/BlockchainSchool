@@ -109,10 +109,30 @@ function onClickRegist() {
   newQuotesInput.value = "";
 }
 
-function onClickSearch() {
+async function onClickSearch() {
   const searchInput = document.querySelector(".searchInput");
+  const searchResult = document.querySelector(".searchResult");
   if (!searchInput.value) return;
 
   const question = searchInput.value;
   searchInput.value = "검색중입니다..잠시만 기다려주세요";
+
+  const response = await axios.post(
+    "https://holy-fire-2749.fly.dev/chat",
+    {
+      // question: question,
+      question,
+    },
+    {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer BLOCKCHAINSCHOOL3",
+      },
+    }
+  );
+  if (response.status === 200) {
+    searchResult.style.display = "inline";
+    searchResult.innerText = response.data.choices[0].message.content;
+  }
+  searchInput.value = "";
 }
