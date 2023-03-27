@@ -89,4 +89,44 @@ main {
   .searchResult {
     display: none;
   }
+
+  .nft {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    img {
+      width: 256px;
+      height: 256px;
+    }
+    .nftHover {
+      position: absolute;
+      display: none;
+      width: 256px;
+      height: 256px;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      a {
+        color: white;
+      }
+      button {
+        position: absolute;
+        color: black;
+        top: 0;
+        right: 0;
+        margin: -8px;
+        border-radius: 9999px;
+        width: 24px;
+        height: 24px;
+      }
+    }
+    &:hover {
+      .nftHover {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
 }

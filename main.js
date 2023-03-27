@@ -142,3 +142,7 @@ async function onClickSearch() {
   searchInput.value = "";
   isLoading = false;
 }
+
+function onClickToggle() {
+  document.querySelector(".nft");
+}
