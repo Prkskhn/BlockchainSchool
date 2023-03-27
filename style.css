@@ -21,5 +21,25 @@ main .mainBox {
   position: fixed;
   z-index: 1;
 }
+main .mainBox .quotesBox {
+  position: relative;
+}
+main .mainBox .quotesBox .quotes {
+  font-size: 30px;
+}
+main .mainBox .quotesBox .addQuotes {
+  width: 100px;
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+main .mainBox .quotesBox:hover .addQuotes {
+  display: inline-block;
+}
+main .mainBox .inputBox {
+  display: none;
+}
 
 /*# sourceMappingURL=style.css.map */

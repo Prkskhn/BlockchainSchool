@@ -12,15 +12,23 @@ function getTime() {
 getTime();
 setInterval(getTime, 1000);
 
-let quotesInput = document.querySelector(".quotes");
-let getQuotes = localStorage.getItem("quotes");
+function quotesRandom() {
+  let quotesInput = document.querySelector(".quotes");
+  let getQuotes = localStorage.getItem("quotes");
 
-if (!getQuotes) {
-  localStorage.setItem("quotes", JSON.stringify(["명언1", "명언2", "명언3"]));
-  getQuotes = localStorage.getItem("quotes");
+  if (!getQuotes) {
+    localStorage.setItem("quotes", JSON.stringify(["명언1", "명언2", "명언3"]));
+    getQuotes = localStorage.getItem("quotes");
+  }
+
+  let displayQuotes = JSON.parse(getQuotes);
+
+  quotesInput.innerText =
+    displayQuotes[Math.floor(Math.random() * displayQuotes.length)];
 }
+quotesRandom();
 
-let displayQuotes = JSON.parse(getQuotes);
-
-quotesInput.innerText =
-  displayQuotes[Math.floor(Math.random() * displayQuotes.length)];
+function displayInputBox() {
+  const displayInputBox = document.querySelector(".inputBox");
+  displayInputBox.style.display = "inline-block";
+}
