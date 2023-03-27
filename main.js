@@ -108,3 +108,11 @@ function onClickRegist() {
   newQuotes.style.display = "none";
   newQuotesInput.value = "";
 }
+
+function onClickSearch() {
+  const searchInput = document.querySelector(".searchInput");
+  if (!searchInput.value) return;
+
+  const question = searchInput.value;
+  searchInput.value = "검색중입니다..잠시만 기다려주세요";
+}
