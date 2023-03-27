@@ -44,5 +44,62 @@ main {
     .inputBox {
       display: none;
     }
+    .gptBox {
+      .searchLogo {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    .searchResult {
+      display: none;
+    }
+    .nftBox {
+      display: flex;
+      position: fixed;
+      top: 0;
+      right: 0;
+      margin: 20px;
+      .nftImage {
+        width: 250px;
+        height: 250px;
+      }
+      .nftHover {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 250px;
+        background-color: rgba(0, 0, 0, 0.5);
+        a {
+          color: white;
+        }
+        button {
+          position: absolute;
+          color: black;
+          top: 0;
+          right: 0;
+          margin: -8px;
+          border-radius: 9999px;
+          width: 24px;
+          height: 24px;
+        }
+      }
+      &:hover {
+        .nftHover {
+          display: inline;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+    .nftView {
+      position: fixed;
+      top: 0;
+      right: 0;
+      margin: 24px;
+      display: none;
+    }
   }
 }
