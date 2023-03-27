@@ -143,6 +143,15 @@ async function onClickSearch() {
   isLoading = false;
 }
 
-function onClickToggle() {
-  document.querySelector(".nft");
+function onClickToggle(value) {
+  const nft = document.querySelector(".nft");
+  const nftView = document.querySelector(".nftView");
+
+  if (value) {
+    nft.style.display = "inline-block";
+    nftView.style.display = "none";
+  } else {
+    nft.style.display = "none";
+    nftView.style.display = "inline-block";
+  }
 }
