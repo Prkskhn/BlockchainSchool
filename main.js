@@ -109,11 +109,15 @@ function onClickRegist() {
   newQuotesInput.value = "";
 }
 
+let isLoading = false;
+
 async function onClickSearch() {
   const searchInput = document.querySelector(".searchInput");
   const searchResult = document.querySelector(".searchResult");
   if (!searchInput.value) return;
+  if (isLoading) return;
 
+  isLoading = true;
   const question = searchInput.value;
   searchInput.value = "검색중입니다..잠시만 기다려주세요";
 
@@ -134,5 +138,7 @@ async function onClickSearch() {
     searchResult.style.display = "inline";
     searchResult.innerText = response.data.choices[0].message.content;
   }
+
   searchInput.value = "";
+  isLoading = false;
 }
