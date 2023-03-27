@@ -32,3 +32,21 @@ function displayInputBox() {
   const displayInputBox = document.querySelector(".inputBox");
   displayInputBox.style.display = "inline-block";
 }
+
+function addNewQuotes() {
+  const inputText2 = document.querySelector(".inputText");
+
+  const getQuotes2 = localStorage.getItem("quotes");
+  const getQuotesParse = JSON.parse(getQuotes2);
+  getQuotesParse.push(inputText2.value);
+  const setQuotes = localStorage.setItem(
+    "quotes",
+    JSON.stringify(getQuotesParse)
+  );
+  let quotesInput = document.querySelector(".quotes");
+  quotesInput.innerText = inputText2.value;
+  quotesInput.style.color = "red";
+  const inputBoxDisplay = document.querySelector(".inputBox");
+  inputText2.value = "";
+  inputBoxDisplay.style.display = "none";
+}
