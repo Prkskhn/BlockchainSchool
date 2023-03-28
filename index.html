@@ -10,7 +10,6 @@
   <body>
     <main>
       <div class="mainBox">
-        <div class="time">시간입니다</div>
         <div class="nftBox">
           <img
             class="nftImage"
@@ -26,17 +25,19 @@
             <button onclick="onClickToggle(false)">X</button>
           </div>
         </div>
-        <button class="nftView" onclick="onClickToggle(true)">NFT보기</button>
+        <div class="time">시간입니다</div>
         <div class="quotesBox">
           <div class="quotes">명언입니다</div>
           <button class="addQuotes" onclick="displayInputBox()">
             명언 추가하기
           </button>
+          <div class="inputBox">
+            <input class="inputText" type="text" />
+            <button class="enroll" onclick="addNewQuotes()">등록</button>
+          </div>
         </div>
-        <div class="inputBox">
-          <input class="inputText" type="text" />
-          <button class="enroll" onclick="addNewQuotes()">등록</button>
-        </div>
+
+        <button class="nftView" onclick="onClickToggle(true)">NFT보기</button>
 
         <div class="gptBox">
           <div class="gptQuestionBox">

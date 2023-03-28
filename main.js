@@ -23,8 +23,9 @@ function quotesRandom() {
 
   let displayQuotes = JSON.parse(getQuotes);
 
-  quotesInput.innerText =
-    displayQuotes[Math.floor(Math.random() * displayQuotes.length)];
+  quotesInput.innerText = `--"${
+    displayQuotes[Math.floor(Math.random() * displayQuotes.length)]
+  }"--`;
 }
 quotesRandom();
 
