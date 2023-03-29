@@ -274,6 +274,9 @@ main {
         align-items: center;
         position: relative;
         input {
+          display: flex;
+          justify-content: center;
+          align-items: center;
           padding-left: 10px;
           border: none;
           width: 400px;
@@ -281,6 +284,7 @@ main {
           border-radius: 999px;
           font-family: Arial;
         }
+
         .gptEnrollButton {
           position: absolute;
           right: 2px;
