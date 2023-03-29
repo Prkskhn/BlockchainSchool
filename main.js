@@ -86,11 +86,12 @@ async function searchClick() {
   if (response.status === 200) {
     gptResultText.style.display = "inline";
     gptResultText.innerText = response.data.choices[0].message.content;
-  }
-  gptQuestionInput.value = "";
-  isLoading = false;
-}
+    gptResultText.style.display = "flex";
 
+    gptQuestionInput.value = "";
+    isLoading = false;
+  }
+}
 function onClickToggle(value) {
   const nft = document.querySelector(".nftBox");
   const nftView = document.querySelector(".nftView");
@@ -103,3 +104,85 @@ function onClickToggle(value) {
     nftView.style.display = "inline-block";
   }
 }
+
+function timeCard() {
+  const time = document.querySelector(".time");
+  const timeOnOff = document.querySelector(".timeOnOff");
+  if (time.style.display === "none") {
+    time.style.display = "flex";
+    timeOnOff.style.backgroundColor = "greenyellow";
+  } else {
+    time.style.display = "none";
+    timeOnOff.style.backgroundColor = "red";
+  }
+}
+timeCard();
+
+function nftCard() {
+  const nftBox = document.querySelector(".nftBox");
+  const nftOnOff = document.querySelector(".nftOnOff");
+  if (nftBox.style.display === "none") {
+    nftBox.style.display = "flex";
+    nftOnOff.style.backgroundColor = "greenyellow";
+  } else {
+    nftBox.style.display = "none";
+    nftOnOff.style.backgroundColor = "red";
+  }
+}
+nftCard();
+
+function quotesCard() {
+  const quotesBox = document.querySelector(".quotesBox");
+  const quoteOnOff = document.querySelector(".quoteOnOff");
+
+  if (quotesBox.style.display === "none") {
+    quotesBox.style.display = "flex";
+    quoteOnOff.style.backgroundColor = "greenyellow";
+  } else {
+    quotesBox.style.display = "none";
+    quoteOnOff.style.backgroundColor = "red";
+    quotesRandom();
+  }
+}
+
+quotesCard();
+
+function weatherCard() {
+  const weatherBox = document.querySelector(".weatherBox");
+  const weatherOnOff = document.querySelector(".weatherOnOff");
+
+  if (weatherBox.style.display === "none") {
+    weatherBox.style.display = "flex";
+    weatherOnOff.style.backgroundColor = "greenyellow";
+  } else {
+    weatherBox.style.display = "none";
+    weatherOnOff.style.backgroundColor = "red";
+  }
+}
+
+weatherCard();
+
+function weatherGet() {
+  const weatherIcon = document.querySelector(".weatherIcon");
+  const weatherTemp = document.querySelector(".weatherTemp");
+
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+      const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+          weatherTemp.innerText =
+            data.name + "," + parseInt(data.main.temp) + "°C";
+
+          weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+        });
+    },
+    () => alert("Not Allowed!")
+  );
+}
+
+weatherGet();
