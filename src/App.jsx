@@ -1,13 +1,19 @@
-import Card from "./components/Card";
-import cardData from "./cardData.json";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Main from "./pages/main";
+import A from "./pages/a";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <div className="grid grid-cols-4 justify-items-center gap-8 py-8">
-      {cardData.map((v, i) => {
-        return <Card key={i} symbol={v.symbol} score={v.score} />;
-      })}
-    </div>
+    <BrowserRouter>
+      <div>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/a" element={<A />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
