@@ -1,22 +1,26 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Header from "./components/Header";
-import Intro from "./components/Intro";
-import Portfolio from "./components/Portfolio";
-import Contact from "./components/Contact";
+
 import Footer from "./components/Footer";
+import Main from "./pages/main";
+import Portfolio from "./pages/portfolio";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-    <div className="bg-red-100 min-h-screen">
-      <Header />
-      <main>
-        {/* introduce */}
-        <Intro />
-        {/* portfolio */}
-        <Portfolio />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="bg-red-100 min-h-screen flex flex-col">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/portfolio/:projectId" element={<Portfolio />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

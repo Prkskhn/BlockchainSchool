@@ -7,6 +7,7 @@ const Portfolio = () => {
         return (
           <PortfolioCard
             key={i}
+            index={i}
             title={v.title}
             desc={v.desc}
             image={v.image}
