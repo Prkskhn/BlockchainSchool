@@ -1,9 +1,13 @@
+import Contact from "./Contact";
+import Introduce from "./Introduce";
+import Project from "./Project";
+
 function Main() {
   return (
-    <div className="bg-purple-100 min-w-full flex justify-center items-center grow">
-      <div></div>
-      <div>main</div>
-      <div></div>
+    <div className="bg-purple-100 min-w-full flex flex-col justify-center items-center grow">
+      <Introduce />
+      <Project />
+      <Contact />
     </div>
   );
 }
