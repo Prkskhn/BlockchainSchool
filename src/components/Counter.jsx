@@ -1,15 +1,21 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
-const Counter = () => {
-  const [count, setCount] = useState(0);
-
+const Counter = ({ count, setCount }) => {
   const onClickAdd = () => {
     setCount(count + 1);
   };
 
   useEffect(() => {
-    console.log("CounterComponent가 생성된 상태입니다!");
-  }, []);
+    console.log("Counter 컴포넌트가 생성된 상태입니다.");
+
+    if (count > 0) {
+      console.log("Counter 업데이트 되었습니다.");
+    }
+
+    return () => {
+      console.log("Counter 제거");
+    };
+  }, [count]);
 
   return (
     <div className="flex flex-col justify-center items-center">

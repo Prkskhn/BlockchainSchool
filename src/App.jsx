@@ -3,16 +3,19 @@ import Counter from "./components/Counter";
 
 function App() {
   const [toggle, setToggle] = useState(false);
+  const [count, setCount] = useState(0);
+
   const onClickToggle = () => {
     setToggle(!toggle);
   };
 
   return (
     <div className="bg-red-100 min-h-screen flex flex-col justify-center items-center">
-      {toggle && <Counter />}
+      {toggle && <Counter count={count} setCount={setCount} />}
+      {/* {toggle ? <Counter /> : "카운터"} */}
       <button
         onClick={onClickToggle}
-        className="border-2 border-red-300 px-3 py-1 m-4 text-red-500 font-bold bg-white rounded-md "
+        className="bg-pink-300 px-4 py-2 rounded-2xl text-white font-bold mt-4"
       >
         버튼
       </button>
