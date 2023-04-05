@@ -1,10 +1,10 @@
 import GrandChild from "./GrandChild";
 
-const Child = ({ gift, setGift }) => {
+const Child = () => {
   return (
     <div>
-      <div className="w-40 h-40 bg-pink-300">Child: {gift}</div>
-      <GrandChild gift={gift} setGift={setGift} />
+      <div className="w-40 h-40 bg-pink-300">Child</div>
+      <GrandChild />
     </div>
   );
 };
