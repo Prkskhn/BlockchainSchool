@@ -5,16 +5,19 @@ import GameResult from "./components/GameResult";
 export const AppContext = createContext();
 
 function App() {
-  const [point, setPoint] = useState(5);
+  const [myPoint, setMyPoint] = useState(localStorage.getItem("point") | 0);
+
   useEffect(() => {
     let savedPoint = localStorage.getItem("point");
+
     if (!savedPoint) {
       localStorage.setItem("point", 0);
     }
   }, []);
+
   return (
-    <AppContext.Provider value={(point, setPoint)}>
-      <div className="bg-red-200 flex flex-col justify-center items-center min-h-screen">
+    <AppContext.Provider value={{ myPoint, setMyPoint }}>
+      <div className="flex flex-col justify-center items-center min-h-screen">
         <GameResult />
         <GameBoard />
       </div>
