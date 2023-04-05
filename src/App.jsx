@@ -1,8 +1,11 @@
-import { useEffect } from "react";
+import { createContext, useEffect, useState } from "react";
 import GameBoard from "./components/GameBoard";
 import GameResult from "./components/GameResult";
 
+export const AppContext = createContext();
+
 function App() {
+  const [point, setPoint] = useState(5);
   useEffect(() => {
     let savedPoint = localStorage.getItem("point");
     if (!savedPoint) {
@@ -10,10 +13,12 @@ function App() {
     }
   }, []);
   return (
-    <div className="bg-red-200 flex flex-col justify-center items-center min-h-screen">
-      <GameResult />
-      <GameBoard />
-    </div>
+    <AppContext.Provider value={(point, setPoint)}>
+      <div className="bg-red-200 flex flex-col justify-center items-center min-h-screen">
+        <GameResult />
+        <GameBoard />
+      </div>
+    </AppContext.Provider>
   );
 }
 

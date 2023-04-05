@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AppContext } from "../App";
 
 const GameBoard = () => {
-  const [point, setPoint] = useState(5);
+  const { point, setPoint } = useContext(AppContext);
   const [randomNum, setRandomNum] = useState(Math.floor(Math.random() * 100));
   const [choiceNum, setChoiceNum] = useState("");
   const [hint, setHint] = useState("0 ~ 100 사이의 숫자를 맞춰보세요!");
