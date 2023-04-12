@@ -3,7 +3,7 @@ const todoRouter = require("./routes/todo");
 
 const app = express();
 
-const port = 3020;
+const port = 3030;
 
 app.use(express.json());
 app.use("/todo", todoRouter);
