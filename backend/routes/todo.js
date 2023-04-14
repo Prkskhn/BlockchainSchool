@@ -64,6 +64,57 @@ router.get("/", async (req, res) => {
 router.put("/:id/done", async (req, res) => {
   try {
     const { id } = req.params;
+
+    const existTodo = await client.todo.findUnique({
+      where: {
+        id: parseInt(id),
+      },
+    });
+
+    if (!existTodo) {
+      return res.status(400).json({ ok: false, error: "Not exist todo." });
+    }
+
+    const updatedTodo = await client.todo.update({
+      where: {
+        id: parseInt(id),
+      },
+      data: {
+        isDone: !existTodo.isDone,
+      },
+    });
+
+    res.json({ ok: true, todo: updatedTodo });
+  } catch (error) {
+    console.error(error);
+  }
+});
+
+router.delete("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { userId } = req.body;
+
+    const existTodo = await client.todo.findUnique({
+      where: {
+        id: parseInt(id),
+      },
+    });
+
+    if (!existTodo) {
+      return res.status(400).json({ ok: false, error: "Not exist todo." });
+    }
+    if (existTodo.userId !== parseInt(userId)) {
+      return res.status(400).json({ ok: false, error: "U R not todo owner." });
+    }
+
+    const deletedTodo = await client.todo.delete({
+      where: {
+        id: parseInt(id),
+      },
+    });
+
+    res.json({ ok: true, todo: deletedTodo });
   } catch (error) {
     console.error(error);
   }
