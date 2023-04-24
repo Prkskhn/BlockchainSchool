@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Web3 from "web3";
 import {
   CONTRACT_ABI,
@@ -6,6 +6,7 @@ import {
   NFT_ABI,
   NFT_ADDRESS,
 } from "./web3.config";
+import axios from "axios";
 
 const web3 = new Web3(window.ethereum);
 const contract = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
@@ -14,6 +15,7 @@ const nftContract = new web3.eth.Contract(NFT_ABI, NFT_ADDRESS);
 function App() {
   const [account, setAccount] = useState("");
   const [myBalance, setMyBalance] = useState();
+  const [nftMetaData, setNftMetaData] = useState();
 
   const onClickAccount = async () => {
     try {
@@ -42,18 +44,32 @@ function App() {
   };
   const onClickMint = async () => {
     try {
+      if (!account) return;
+
       const result = await nftContract.methods
         .mintNft(
-          "https://gateway.pinata.cloud/ipfs/QmZ6kMdaYfDYViUa7L3oCLrcSoFq7XsYDZUmajxyWqtxrM?_gl=1*femul0*rs_ga*MWEwMjFjY2MtY2Q1Yi00MTZlLWExOGUtODgyYTg3ODU5ZGFk*rs_ga_5RMPXG14TE*MTY4MTk3NjgxOS40LjAuMTY4MTk3NjgyMS41OC4wLjA."
+          "https://gateway.pinata.cloud/ipfs/QmR1qH6XUYLos13LPXEwGgPu1A58kKMb3qMSdPCrH2iFCq"
         )
-        .send({
-          from: account,
-        });
-      console.log(nftContract);
+        .send({ from: account });
+      if (!result.status) return;
+
+      const balanceOf = await nftContract.methods.balanceOf(account).call();
+      const tokenOfOwnerByIndex = await nftContract.methods
+        .tokenOfOwnerByIndex(account, parseInt(balanceOf) - 1)
+        .call();
+      const tokenURI = await nftContract.methods
+        .tokenURI(tokenOfOwnerByIndex)
+        .call();
+      const response = await axios.get(tokenURI);
+      setNftMetaData(response.data);
     } catch (error) {
       console.error(error);
     }
   };
+
+  useEffect(() => {
+    console.log(nftContract);
+  }, []);
 
   return (
     <div className="bg-red-100 min-h-screen flex justify-center items-center">
@@ -72,7 +88,13 @@ function App() {
               잔액 조회
             </button>
           </div>
+
           <div className="flex items-center mt-4">
+            {nftMetaData && (
+              <div>
+                <img src={nftMetaData.image} alt="NFT" />
+              </div>
+            )}
             <button className="ml-2 btn-style" onClick={onClickMint}>
               민팅
             </button>
