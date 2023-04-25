@@ -1,12 +1,14 @@
 import { useState } from "react";
 import Web3 from "web3";
 import { CONTRACT_ABI, CONTRACT_ADDRESS } from "./web3.config";
+import axios from "axios";
 
 const web3 = new Web3(window.ethereum);
 const contract = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
 
 function App() {
   const [account, setAccount] = useState();
+  const [nftMetadata, setNftMetadata] = useState();
 
   const onClickAccount = async () => {
     try {
@@ -23,7 +25,19 @@ function App() {
     try {
       const mintNft = await contract.methods.mintNft().send({ from: account });
       // console.log(contract)
-      console.log(mintNft);
+      // console.log(mintNft);
+      if (!mintNft.status) return;
+
+      const balanceOf = await contract.methods.balanceOf(account).call();
+      const tokenOfOwnerByIndex = await contract.methods
+        .tokenOfOwnerByIndex(account, parseInt(balanceOf) - 1)
+        .call();
+      console.log(tokenOfOwnerByIndex);
+      const tokenURI = await contract.methods
+        .tokenURI(tokenOfOwnerByIndex)
+        .call();
+      const response = await axios.get(tokenURI);
+      setNftMetadata(response.data);
     } catch (error) {
       console.error(error);
     }
@@ -37,6 +51,22 @@ function App() {
           <button className="btn-style ml-4" onClick={onClickMint}>
             민팅
           </button>
+          {nftMetadata && (
+            <div>
+              <img src={nftMetadata.image} alt="NFT" />
+              <div>{nftMetadata.name}</div>
+              <div>{nftMetadata.description}</div>
+              <ul>
+                {nftMetadata.attributes.map((v, i) => {
+                  return (
+                    <li key={i}>
+                      {v.trait_type}-{v.value}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          )}
         </div>
       ) : (
         <button className="btn-style" onClick={onClickAccount}>
