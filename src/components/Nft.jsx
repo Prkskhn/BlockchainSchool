@@ -1,6 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import NftCard from "./NftCard";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 const Nft = ({ totalNft, mintedNft }) => {
   const [selectedPage, setSelectedPage] = useState(1);
   const [nft, setNft] = useState();
@@ -55,7 +59,7 @@ const Nft = ({ totalNft, mintedNft }) => {
           key={i}
           className={`m-2 ${
             i + 1 === selectedPage ? "bg-gray-500" : "bg-gray-900"
-          } text-white font-bold px-2 py-1 round`}
+          } text-white font-bold px-2 py-1 rounded`}
           onClick={onClickPage(i + 1)}
         >
           {i + 1}
@@ -72,12 +76,20 @@ const Nft = ({ totalNft, mintedNft }) => {
   useEffect(() => {
     console.log(nft);
   }, [nft]);
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
   return (
     <>
       <div className="bg-gray-900 flex justify-center items-center py-10 mt-10 border-t-4 border-gray-100 border-opacity-30">
         {pageComp()}
       </div>
+
       <div className="pb-10 grid grid-cols-3 xl:grid-cols-5 justify-items-center gap-8">
         {nft ? (
           nft.map((v, i) => {
