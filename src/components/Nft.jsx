@@ -10,13 +10,32 @@ const Nft = ({ totalNft, mintedNft }) => {
     try {
       let nftArray = [];
       setNft();
+      // for (let i = 0; i < 10; i++) {
+      //   const tokenId = i + 1 + (p - 1) * 10;
+      //   if (tokenId <= parseInt(totalNft)) {
+      //     let response = await axios.get(
+      //       `${process.env.REACT_APP_JSON_URL}/${tokenId}.json`
+      //     );
+      //     nftArray.push({ tokenId, metadata: response.data });
+      //   } else {
+      //     return;
+      //   }
+      //   console.log(nftArray);
+      // }
+
       for (let i = 0; i < 10; i++) {
         const tokenId = i + 1 + (p - 1) * 10;
-        let response = await axios.get(
-          `${process.env.REACT_APP_JSON_URL}/${tokenId}.json`
-        );
-        nftArray.push({ tokenId, metadata: response.data });
+
+        if (tokenId <= parseInt(totalNft)) {
+          let response = await axios.get(
+            `${process.env.REACT_APP_JSON_URL}/${tokenId}.json`
+          );
+          nftArray.push({ tokenId, metadata: response.data });
+        }
+
+        // console.log(nftArray);
       }
+      // console.log(nftArray);
       setNft(nftArray);
     } catch (error) {
       console.error(error);
@@ -50,7 +69,7 @@ const Nft = ({ totalNft, mintedNft }) => {
 
   useEffect(() => {
     getNft(1);
-  }, []);
+  }, [totalNft]);
   useEffect(() => {
     console.log(nft);
   }, [nft]);
