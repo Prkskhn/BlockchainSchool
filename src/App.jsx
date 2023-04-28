@@ -10,7 +10,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <div className="bg-green-100 min-h-screen  ">
+      <div className="bg-gray-900 min-h-screen  ">
         <Header account={account} setAccount={setAccount} />
         <Routes>
           <Route path="/" element={<Main account={account} />} />

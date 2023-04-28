@@ -50,7 +50,7 @@ const Main = ({ account }) => {
   }, [account]);
 
   return (
-    <div className="max-w-screen-xl mx-auto bg-blue-100  ">
+    <div className="max-w-screen-xl mx-auto bg-gray-900  ">
       <Intro totalNft={totalNft} mintedNft={mintedNft} myNft={myNft} />
       <Nft totalNft={totalNft} mintedNft={mintedNft} />
     </div>

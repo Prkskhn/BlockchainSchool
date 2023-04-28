@@ -24,20 +24,22 @@ const Detail = () => {
 
   useEffect(() => console.log(metadata), [metadata]);
   return (
-    <div>
+    <div className=" min-h-screen flex justify-center items-center text-white">
       {metadata ? (
         <>
           <img src={`${metadata.image}`} alt="" />
-          <div>{`${metadata.name}`}</div>
-          <div>
-            {metadata.attributes.map((v, i) => {
-              return (
-                <div key={i} className="my-2">
-                  <span>{v.trait_type}</span>
-                  <span> : {v.value}</span>
-                </div>
-              );
-            })}
+          <div className="ml-8">
+            <div className="mb-4 font-bold text-2xl">{`${metadata.name}`}</div>
+            <div>
+              {metadata.attributes.map((v, i) => {
+                return (
+                  <div key={i} className="my-2">
+                    <span className="font-semibold">{v.trait_type}</span>
+                    <span> : {v.value}</span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </>
       ) : (

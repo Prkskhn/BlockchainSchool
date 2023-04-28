@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import NftCard from "./NftCard";
-
 const Nft = ({ totalNft, mintedNft }) => {
   const [selectedPage, setSelectedPage] = useState(1);
   const [nft, setNft] = useState();
@@ -55,11 +54,11 @@ const Nft = ({ totalNft, mintedNft }) => {
         <button
           key={i}
           className={`m-2 ${
-            i + 1 === selectedPage ? "bg-gray-900" : "bg-gray-500"
-          } text-white font-bold p-2 rounded-full`}
+            i + 1 === selectedPage ? "bg-gray-500" : "bg-gray-900"
+          } text-white font-bold px-2 py-1 round`}
           onClick={onClickPage(i + 1)}
         >
-          {i + 1}page
+          {i + 1}
         </button>
       );
     }
@@ -76,8 +75,10 @@ const Nft = ({ totalNft, mintedNft }) => {
 
   return (
     <>
-      <div className="bg-blue-300">{pageComp()}</div>
-      <div className="mt-8 grid grid-cols-1 xl:grid-cols-2 justify-items-center gap-8">
+      <div className="bg-gray-900 flex justify-center items-center py-10 mt-10 border-t-4 border-gray-100 border-opacity-30">
+        {pageComp()}
+      </div>
+      <div className="pb-10 grid grid-cols-3 xl:grid-cols-5 justify-items-center gap-8">
         {nft ? (
           nft.map((v, i) => {
             return (
