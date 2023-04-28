@@ -90,7 +90,7 @@ const Nft = ({ totalNft, mintedNft }) => {
         {pageComp()}
       </div>
 
-      <div className="pb-10 grid grid-cols-3 xl:grid-cols-5 justify-items-center gap-8">
+      <div className="pb-10 grid grid-cols-2 xl:grid-cols-5 justify-items-center gap-8">
         {nft ? (
           nft.map((v, i) => {
             return (
