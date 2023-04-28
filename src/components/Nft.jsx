@@ -4,6 +4,7 @@ import NftCard from "./NftCard";
 // import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 const Nft = ({ totalNft, mintedNft }) => {
   const [selectedPage, setSelectedPage] = useState(1);
@@ -73,16 +74,18 @@ const Nft = ({ totalNft, mintedNft }) => {
   useEffect(() => {
     getNft(1);
   }, [totalNft]);
+
   useEffect(() => {
     console.log(nft);
   }, [nft]);
-  // const settings = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 500,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  // };
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 5,
+  };
 
   return (
     <>
@@ -90,7 +93,8 @@ const Nft = ({ totalNft, mintedNft }) => {
         {pageComp()}
       </div>
 
-      <div className="pb-10 grid grid-cols-3 xl:grid-cols-5 justify-items-center gap-8">
+      {/* <div className="pb-10 grid grid-cols-3 xl:grid-cols-5 justify-items-center gap-8"> */}
+      <Slider {...settings}>
         {nft ? (
           nft.map((v, i) => {
             return (
@@ -105,7 +109,8 @@ const Nft = ({ totalNft, mintedNft }) => {
         ) : (
           <div>로딩중입니다</div>
         )}
-      </div>
+      </Slider>
+      {/* </div> */}
     </>
   );
 };

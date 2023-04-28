@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const NftCard = ({ tokenId, metadata, mintedNft }) => {
   return (
-    <div>
+    <div className="">
       <div className="relative">
         {tokenId > parseInt(mintedNft) && (
           <div className="absolute bg-gray-900 bg-opacity-80 text-white w-40 h-40 flex justify-center items-center">
@@ -13,22 +13,23 @@ const NftCard = ({ tokenId, metadata, mintedNft }) => {
           </div>
         )}
         <img
-          className="rounded-[10px] w-40 h-40"
+          className=" w-40 h-40 rounded-[10px] "
           src={`${metadata.image}`}
           alt=""
         />
+
         <Link to={`/${tokenId}`}>
           {tokenId > parseInt(mintedNft) ? (
             <button
               disabled={parseInt(mintedNft) < tokenId}
-              className="absolute bottom-0 right-0 m-1 bg-gray-900 bg-opacity-80 px-3 py-1 rounded-[10px] text-sm text-gray-500"
+              className="absolute bottom-0 right-24 m-1 bg-gray-900 bg-opacity-80 px-3 py-1 rounded-[10px] text-sm text-gray-500"
             >
               No Detail
             </button>
           ) : (
             <button
               disabled={parseInt(mintedNft) < tokenId}
-              className="absolute bottom-0 right-0 m-1 bg-white px-3 py-1 rounded-[10px] text-sm"
+              className="absolute bottom-0 right-24 m-1 bg-white px-3 py-1 rounded-[10px] text-sm"
             >
               Detail
             </button>
