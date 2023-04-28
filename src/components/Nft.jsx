@@ -27,7 +27,7 @@ const Nft = ({ totalNft, mintedNft }) => {
       //   console.log(nftArray);
       // }
 
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < totalNft; i++) {
         const tokenId = i + 1 + (p - 1) * 10;
 
         if (tokenId <= parseInt(totalNft)) {
