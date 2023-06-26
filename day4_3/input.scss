@@ -1,0 +1,16 @@
+@import "button";
+
+.info {
+  @extend %btnStyle;
+  background-color: darkgray;
+}
+
+.alert {
+  @extend %btnStyle;
+  background-color: darkred;
+}
+
+.success {
+  @extend %btnStyle;
+  background-color: darkgreen;
+}

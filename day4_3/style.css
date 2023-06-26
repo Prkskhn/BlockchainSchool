@@ -1,0 +1,20 @@
+.success, .alert, .info {
+  color: whitesmoke;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.info {
+  background-color: darkgray;
+}
+
+.alert {
+  background-color: darkred;
+}
+
+.success {
+  background-color: darkgreen;
+}
+
+/*# sourceMappingURL=style.css.map */
