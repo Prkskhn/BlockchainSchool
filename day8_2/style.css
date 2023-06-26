@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .backgroundVideo {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+}
+main .mainBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+}
+main .mainBox .quotesBox {
+  position: relative;
+}
+main .mainBox .quotesBox .quotes {
+  font-size: 30px;
+}
+main .mainBox .quotesBox .addQuotes {
+  width: 100px;
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+main .mainBox .quotesBox:hover .addQuotes {
+  display: inline-block;
+}
+main .mainBox .inputBox {
+  display: none;
+}
+main .mainBox .gptBox .searchLogo {
+  width: 30px;
+  height: 30px;
+}
+main .mainBox .searchResult {
+  display: none;
+}
+main .mainBox .nftBox {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 20px;
+}
+main .mainBox .nftBox .nftImage {
+  width: 250px;
+  height: 250px;
+}
+main .mainBox .nftBox .nftHover {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 250px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+main .mainBox .nftBox .nftHover a {
+  color: white;
+}
+main .mainBox .nftBox .nftHover button {
+  position: absolute;
+  color: black;
+  top: 0;
+  right: 0;
+  margin: -8px;
+  border-radius: 9999px;
+  width: 24px;
+  height: 24px;
+}
+main .mainBox .nftBox:hover .nftHover {
+  display: inline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .mainBox .nftView {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 24px;
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */
