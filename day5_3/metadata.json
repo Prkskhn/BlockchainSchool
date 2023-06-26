@@ -1,0 +1,31 @@
+{
+  "name": "oh",
+  "description": "ohohohohoh",
+  "image": "",
+  "attributes": [
+    {
+      "trait_type": "backgroundColor",
+      "value": "black"
+    },
+    {
+      "trait_type": "eye1",
+      "value": "big"
+    },
+    {
+      "trait_type": "eye2",
+      "value": "small"
+    },
+    {
+      "trait_type": "eyebrow1",
+      "value": "long"
+    },
+    {
+      "trait_type": "eyebrow2",
+      "value": "short"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "oh"
+    }
+  ]
+}
