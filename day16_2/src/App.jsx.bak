@@ -1,0 +1,57 @@
+import {
+  ChakraProvider,
+  Box,
+  Button,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuGroup,
+  MenuDivider,
+} from "@chakra-ui/react";
+import { PhoneIcon, ChevronDownIcon } from "@chakra-ui/icons";
+import { useState } from "react";
+
+function App() {
+  const [isLoading, setIsLoading] = useState(false);
+  return (
+    <ChakraProvider>
+      <Box color="red.400">Hello</Box>
+      <Button
+        isLoading={isLoading}
+        colorScheme="pink"
+        leftIcon={<PhoneIcon />}
+        variant="solid"
+      >
+        Call
+      </Button>
+      <Menu>
+        <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+          저녁메뉴
+        </MenuButton>
+        <MenuList>
+          <MenuGroup title="피자">
+            <MenuItem>고구마피자</MenuItem>
+            <MenuItem>포테이토피자</MenuItem>
+            <MenuItem>리코타피자</MenuItem>
+          </MenuGroup>
+          <MenuDivider />
+          <MenuGroup title="치킨">
+            <MenuItem>양념치킨</MenuItem>
+            <MenuItem>순살치킨</MenuItem>
+            <MenuItem>후라이드</MenuItem>
+          </MenuGroup>
+          <MenuDivider />
+          <MenuGroup title="햄버거">
+            <MenuItem>불고기버거</MenuItem>
+            <MenuItem>치즈버거</MenuItem>
+            <MenuItem>와퍼</MenuItem>
+          </MenuGroup>
+          <MenuDivider />
+        </MenuList>
+      </Menu>
+    </ChakraProvider>
+  );
+}
+
+export default App;
