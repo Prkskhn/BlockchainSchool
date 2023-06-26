@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+}
+
+.bgVideo {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  z-index: 0;
+}
+
+main {
+  position: fixed;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .time {
+    font-size: 50px;
+    color: rgba(24, 214, 214, 0.7);
+    margin-bottom: 20px;
+  }
+
+  .quotesBox {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .quotesAddButton {
+      width: 100px;
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .quotes {
+      font-size: 30px;
+    }
+    &:hover {
+      .quotesAddButton {
+        display: inline-block;
+      }
+    }
+  }
+  .quotesReg {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    .quotesRegText {
+      margin-right: 5px;
+    }
+    .quotesRegButton {
+    }
+  }
+}
