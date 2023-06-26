@@ -1,0 +1,321 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .backgroundVideo {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 0;
+  }
+  .mainBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    .weatherBox {
+      position: fixed;
+
+      top: 0;
+      right: 30px;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      .weatherIconBox {
+        .weatherIcon {
+          width: 70px;
+        }
+      }
+      .weatherTemp {
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 100;
+      }
+    }
+    .threeBox {
+      position: fixed;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .time {
+        display: none;
+        width: 200px;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin: 20px;
+        font-size: 20px;
+        border-radius: 10px;
+        color: rgb(90, 90, 90);
+      }
+      .nftBoxBox {
+        .nftBox {
+          display: none;
+          width: 200px;
+          height: 60px;
+          background-color: rgba(255, 255, 255, 0.5);
+          border-radius: 10px;
+          margin: 20px;
+          justify-content: center;
+          align-items: center;
+          .nftImage {
+            width: 60px;
+            height: 60px;
+
+            position: relative;
+          }
+          .nftHover {
+            display: none;
+            position: absolute;
+
+            width: 60px;
+            height: 60px;
+
+            background-color: rgba(0, 0, 0, 0.5);
+            a {
+              color: white;
+            }
+            // button {
+            //   position: absolute;
+            //   color: black;
+            //   top: 0;
+            //   right: 0;
+            //   margin: -8px;
+            //   border-radius: 9999px;
+            //   width: 24px;
+            //   height: 24px;
+            // }
+          }
+          &:hover {
+            .nftHover {
+              display: inline;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+        }
+      }
+      .nftView {
+        margin: 24px;
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+      }
+      .quotesBox {
+        background-color: rgba(255, 255, 255, 0.5);
+        color: rgba(0, 0, 0, 0.5);
+        position: relative;
+        border-radius: 10px;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+        .quotes {
+          font-size: 50px;
+          padding: 10px 30px;
+        }
+
+        .addQuotes {
+          width: 100px;
+          position: absolute;
+          display: none;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        &:hover {
+          .addQuotes {
+            display: inline-block;
+          }
+        }
+        .inputBox {
+          display: none;
+
+          // .inputText {
+          // }
+          .enroll {
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+    .cardBox {
+      position: fixed;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .nftCard {
+        width: 100px;
+        border: none;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin: 10px 0;
+        padding: 10px 20px;
+        position: relative;
+        .nftOnOff {
+          position: absolute;
+          top: 0;
+          right: 0;
+          margin: -3.5px;
+          background-color: red;
+          width: 7px;
+          height: 7px;
+          border-radius: 999px;
+        }
+      }
+      .timeCard {
+        width: 100px;
+        border: none;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin: 10px 0;
+        padding: 10px 20px;
+        position: relative;
+        .timeOnOff {
+          position: absolute;
+          top: 0;
+          right: 0;
+          margin: -3.5px;
+          background-color: red;
+          width: 7px;
+          height: 7px;
+          border-radius: 999px;
+        }
+      }
+      .quoteCard {
+        width: 100px;
+        border: none;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin: 10px 0;
+        padding: 10px 20px;
+        position: relative;
+        .quoteOnOff {
+          position: absolute;
+          top: 0;
+          right: 0;
+          margin: -3.5px;
+          background-color: red;
+          width: 7px;
+          height: 7px;
+          border-radius: 999px;
+        }
+      }
+      .weatherCard {
+        width: 100px;
+        border: none;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin: 10px 0;
+        padding: 10px 20px;
+        position: relative;
+        .weatherOnOff {
+          position: absolute;
+          top: 0;
+          right: 0;
+          margin: -3.5px;
+          background-color: red;
+          width: 7px;
+          height: 7px;
+          border-radius: 999px;
+        }
+      }
+    }
+
+    .gptBox {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      .gptQuestionBox {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+        div {
+          font-size: 50px;
+          font-weight: 800;
+        }
+        .searchLogo {
+          width: 50px;
+          height: 50px;
+          margin-right: 15px;
+        }
+      }
+      .gptSearchBox {
+        font-family: Arial;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        input {
+          padding-left: 10px;
+          border: none;
+          width: 400px;
+          height: 30px;
+          border-radius: 999px;
+          font-family: Arial;
+        }
+        .gptEnrollButton {
+          position: absolute;
+          right: 2px;
+
+          padding: 6px 6px;
+          border-radius: 9999px;
+          border: none;
+          background-color: transparent;
+
+          font-weight: 500;
+          svg {
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            &:hover {
+              animation: spin 1s linear infinite;
+            }
+          }
+        }
+      }
+    }
+    // .searchResult {
+    //   // display: none;
+    // }
+    .searchResult {
+      display: none;
+      border-radius: 10px;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 800px;
+      height: 200px;
+
+      margin-bottom: 40px;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
